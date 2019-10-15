@@ -21,7 +21,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS, scope)
 http = creds.authorize(httplib2.Http())
 
 sheets_manager = gspread.authorize(creds)
-analytics_service = build('analytics', 'v4', http=http)
+analytics_service = build('analyticsreporting', 'v4', http=http)
 
 website_data = []
 print('Pulling data from Google Analytics')
